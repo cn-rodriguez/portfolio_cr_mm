@@ -1,0 +1,223 @@
+---
+const skills = {
+  frontend: ['React', 'Next.js', 'Angular', 'TypeScript', 'TailwindCSS', 'JavaScript'],
+  backend: ['Node.js', 'Express', 'AdonisJS', 'Spring Boot', 'Laravel', 'Java', 'PHP'],
+  database: ['PostgreSQL', 'SQL Server', 'MongoDB', 'MySQL', 'Sequelize', 'Mongoose', 'LucidORM']
+};
+---
+
+<section id="habilidades" class="section skills">
+  <div class="container">
+    <h2 class="section-title">Tecnologías</h2>
+    
+    <div class="skills-intro">
+      <p>Tecnologías que he utilizado en proyectos profesionales y de desarrollo propio.</p>
+    </div>
+    
+    <div class="skills-categories">
+      <div class="skill-category glass-card">
+        <div class="category-header">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18M9 21V9"/>
+          </svg>
+          <h3>Frontend</h3>
+        </div>
+        <div class="skill-tags">
+          {skills.frontend.map(skill => (
+            <span class="skill-tag">{skill}</span>
+          ))}
+        </div>
+      </div>
+      
+      <div class="skill-category glass-card">
+        <div class="category-header">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+            <path d="M7 8l3 3-3 3M12 14h4"/>
+          </svg>
+          <h3>Backend</h3>
+        </div>
+        <div class="skill-tags">
+          {skills.backend.map(skill => (
+            <span class="skill-tag">{skill}</span>
+          ))}
+        </div>
+      </div>
+      
+      <div class="skill-category glass-card">
+        <div class="category-header">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+          </svg>
+          <h3>Base de Datos</h3>
+        </div>
+        <div class="skill-tags">
+          {skills.database.map(skill => (
+            <span class="skill-tag">{skill}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+    
+    <div class="tools-section">
+      <h3 class="tools-title">Otros Conocimientos</h3>
+      <div class="tools-grid">
+        <div class="tool-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <span>Git</span>
+        </div>
+        <div class="tool-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <span>Arquitectura de Microservicios</span>
+        </div>
+        <div class="tool-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+          </svg>
+          <span>Documentación Técnica</span>
+        </div>
+        <div class="tool-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+          <span>Debugging Avanzado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills {
+    background: var(--bg-secondary);
+    position: relative;
+  }
+  
+  .skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+  
+  .skills-intro {
+    margin-bottom: var(--space-lg);
+    max-width: 600px;
+  }
+  
+  .skills-intro p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+  }
+  
+  .skills-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .skill-category {
+    padding: var(--space-md);
+    transition: all 0.3s ease;
+  }
+  
+  .skill-category:hover {
+    border-color: var(--accent-primary);
+  }
+  
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .category-header svg {
+    color: var(--accent-primary);
+  }
+  
+  .category-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+  }
+  
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .skill-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+  }
+  
+  .skill-tag:hover {
+    border-color: var(--accent-primary);
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--accent-primary);
+  }
+  
+  .tools-section {
+    margin-top: var(--space-lg);
+  }
+  
+  .tools-title {
+    font-size: 1rem;
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+  
+  .tool-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+  }
+  
+  .tool-item:hover {
+    border-color: var(--accent-secondary);
+    color: var(--text-primary);
+  }
+  
+  .tool-item svg {
+    color: var(--accent-secondary);
+  }
+</style>

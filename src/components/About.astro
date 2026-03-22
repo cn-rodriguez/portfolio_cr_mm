@@ -1,0 +1,158 @@
+---
+const profile = {
+  bio: `Desarrollador Full Stack con orientación al backend y experiencia comprobada en JavaScript, TypeScript y Java. Me adapto con facilidad a distintos entornos tecnológicos gracias a una formación amplia y una mentalidad orientada a la resolución de problemas. Tengo especial interés en el rastreo y diagnóstico de errores complejos, la mejora continua de sistemas existentes y la implementación de flujos de trabajo eficientes.`,
+  stats: [
+    { value: '2+', label: 'Años de experiencia' },
+    { value: '10+', label: 'Tecnologías' },
+    { value: '10+', label: 'Proyectos' },
+    { value: 'C2', label: 'Inglés' }
+  ]
+};
+---
+
+<section id="sobre-mi" class="section about">
+  <div class="container">
+    <h2 class="section-title">Sobre Mí</h2>
+    
+    <div class="about-grid">
+      <div class="about-content">
+        <p class="about-text">
+          {profile.bio}
+        </p>
+        
+        <div class="about-grid-pattern">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+      
+      <div class="about-stats">
+        {profile.stats.map((stat, index) => (
+          <div class="stat-card glass-card" style={`animation-delay: ${index * 0.1}s`}>
+            <span class="stat-value">{stat.value}</span>
+            <span class="stat-label">{stat.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: var(--bg-secondary);
+    position: relative;
+  }
+  
+  .about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+  
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+  }
+  
+  .about-content {
+    position: relative;
+  }
+  
+  .about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 540px;
+  }
+  
+  .about-grid-pattern {
+    position: absolute;
+    top: 50%;
+    right: -100px;
+    transform: translateY(-50%);
+    display: grid;
+    grid-template-columns: repeat(3, 30px);
+    gap: 8px;
+    opacity: 0.3;
+  }
+  
+  .grid-cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--accent-primary);
+    border-radius: 4px;
+    animation: cellPulse 3s ease-in-out infinite;
+  }
+  
+  .grid-cell:nth-child(2) { animation-delay: 0.2s; }
+  .grid-cell:nth-child(3) { animation-delay: 0.4s; }
+  .grid-cell:nth-child(4) { animation-delay: 0.6s; }
+  .grid-cell:nth-child(5) { animation-delay: 0.8s; }
+  .grid-cell:nth-child(6) { animation-delay: 1s; }
+  .grid-cell:nth-child(7) { animation-delay: 1.2s; }
+  .grid-cell:nth-child(8) { animation-delay: 1.4s; }
+  .grid-cell:nth-child(9) { animation-delay: 1.6s; }
+  
+  @keyframes cellPulse {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+  }
+  
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+  
+  .stat-card {
+    padding: var(--space-md);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-primary);
+  }
+  
+  .stat-value {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent-primary);
+    line-height: 1;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .about-grid-pattern {
+      display: none;
+    }
+  }
+</style>

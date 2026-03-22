@@ -1,0 +1,313 @@
+---
+const contact = {
+  email: 'cn.rodriguez@outlook.com',
+  phone: '+569 55266761',
+  location: 'Coquimbo, Chile',
+  linkedin: 'linkedin.com/in/cn-rodriguez',
+  github: 'github.com/cn-rodriguez'
+};
+
+const languages = [
+  { lang: 'Español', level: 'Nativo' },
+  { lang: 'Inglés', level: 'C2 — Avanzado' }
+];
+---
+
+<section id="contacto" class="section contact">
+  <div class="container">
+    <h2 class="section-title">Contacto</h2>
+    
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="contact-intro">
+          ¿Tienes un proyecto en mente o quieres conversar sobre oportunidades?
+          Estoy siempre abierto a nuevos desafíos técnicos.
+        </p>
+        
+        <div class="contact-links">
+          <a href={`mailto:${contact.email}`} class="contact-link glass-card">
+            <div class="link-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <path d="M22 6l-10 7L2 6"/>
+              </svg>
+            </div>
+            <div class="link-content">
+              <span class="link-label">Email</span>
+              <span class="link-value">{contact.email}</span>
+            </div>
+            <svg class="link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          
+          <a href={`https://${contact.linkedin}`} target="_blank" rel="noopener" class="contact-link glass-card">
+            <div class="link-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </div>
+            <div class="link-content">
+              <span class="link-label">LinkedIn</span>
+              <span class="link-value">{contact.linkedin}</span>
+            </div>
+            <svg class="link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          
+          <a href={`https://${contact.github}`} target="_blank" rel="noopener" class="contact-link glass-card">
+            <div class="link-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+            </div>
+            <div class="link-content">
+              <span class="link-label">GitHub</span>
+              <span class="link-value">{contact.github}</span>
+            </div>
+            <svg class="link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="contact-aside">
+        <div class="aside-card glass-card">
+          <h3 class="aside-title">Idiomas</h3>
+          <div class="languages-list">
+            {languages.map(lang => (
+              <div class="language-item">
+                <span class="lang-name">{lang.lang}</span>
+                <span class="lang-level">{lang.level}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div class="aside-card glass-card">
+          <h3 class="aside-title">Ubicación</h3>
+          <div class="location-display">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>{contact.location}</span>
+          </div>
+          <div class="timezone">
+            <span class="tz-label">Zona horaria</span>
+            <span class="tz-value">CLT (UTC-4)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <p class="footer-text">
+        Diseñado y desarrollado por <span class="accent">Carlos Rodriguez</span>
+      </p>
+      <p class="footer-year">{new Date().getFullYear()}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .contact {
+    background: var(--bg-secondary);
+    position: relative;
+  }
+  
+  .contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: var(--space-lg);
+  }
+  
+  .contact-intro {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+    max-width: 500px;
+  }
+  
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    transition: all 0.3s ease;
+  }
+  
+  .contact-link:hover {
+    border-color: var(--accent-primary);
+    transform: translateX(8px);
+  }
+  
+  .link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--bg-tertiary);
+    border-radius: 12px;
+    color: var(--accent-primary);
+  }
+  
+  .link-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .link-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: var(--font-mono);
+  }
+  
+  .link-value {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+  }
+  
+  .link-arrow {
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+  }
+  
+  .contact-link:hover .link-arrow {
+    color: var(--accent-primary);
+    transform: translateX(4px);
+  }
+  
+  .contact-aside {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .aside-card {
+    padding: var(--space-md);
+  }
+  
+  .aside-title {
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .languages-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .language-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .lang-name {
+    font-weight: 500;
+  }
+  
+  .lang-level {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent-primary);
+  }
+  
+  .location-display {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .location-display svg {
+    color: var(--accent-primary);
+  }
+  
+  .timezone {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--border);
+  }
+  
+  .tz-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+  
+  .tz-value {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent-secondary);
+  }
+  
+  .footer {
+    padding: var(--space-lg) 0;
+    border-top: 1px solid var(--border);
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  .footer-year {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+  
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+      flex-direction: column;
+      gap: var(--space-xs);
+      text-align: center;
+    }
+  }
+</style>

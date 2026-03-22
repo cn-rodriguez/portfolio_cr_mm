@@ -1,0 +1,226 @@
+---
+import Terminal from './react/Terminal';
+import ParticleField from './react/ParticleField';
+---
+
+<section class="hero">
+  <ParticleField client:load />
+  
+  <div class="hero-content">
+    <div class="hero-badge fade-in" style="animation-delay: 0.1s">
+      <span class="badge-dot"></span>
+      <span>Disponible para proyectos</span>
+    </div>
+    
+    <h1 class="hero-title fade-in" style="animation-delay: 0.2s">
+      Carlos<br />
+      <span class="accent">Rodriguez</span>
+    </h1>
+    
+    <p class="hero-subtitle fade-in" style="animation-delay: 0.4s">
+      Desarrollador Full Stack
+      <span class="separator">·</span>
+      Orientación Backend
+      <span class="separator">·</span>
+      Chile
+    </p>
+    
+    <div class="hero-terminal fade-in" style="animation-delay: 0.6s">
+      <Terminal client:load />
+    </div>
+    
+    <div class="hero-cta fade-in" style="animation-delay: 0.8s">
+      <a href="#experiencia" class="btn btn-primary">
+        <span>Explorar proyectos</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </a>
+      <a href="#contacto" class="btn btn-secondary">Contacto</a>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator fade-in" style="animation-delay: 1s">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: var(--space-xl) var(--space-md);
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(ellipse at 20% 20%, rgba(0, 255, 136, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .hero-content {
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: 0.5rem 1rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+  }
+  
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+  
+  .hero-title {
+    font-size: clamp(3rem, 12vw, 8rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-sm);
+    animation: glow 3s ease-in-out infinite;
+  }
+  
+  .accent {
+    color: var(--accent-primary);
+    position: relative;
+  }
+  
+  .accent::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 2px;
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+  
+  .separator {
+    color: var(--accent-primary);
+    font-weight: 300;
+  }
+  
+  .hero-terminal {
+    max-width: 600px;
+    margin: 0 auto var(--space-lg);
+  }
+  
+  .hero-cta {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: 0.875rem 1.75rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3);
+  }
+  
+  .btn-primary svg {
+    transition: transform 0.3s ease;
+  }
+  
+  .btn-primary:hover svg {
+    transform: translateY(4px);
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+  }
+  
+  .btn-secondary:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+  }
+  
+  .scroll-indicator {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  
+  .scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--accent-primary), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+</style>

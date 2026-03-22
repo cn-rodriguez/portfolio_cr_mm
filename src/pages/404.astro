@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - Página no encontrada | Carlos Rodriguez">
+  <section class="not-found">
+    <div class="content">
+      <div class="terminal">
+        <div class="terminal-header">
+          <span class="terminal-dot error"></span>
+          <span class="terminal-dot warning"></span>
+          <span class="terminal-dot success"></span>
+        </div>
+        <div class="terminal-body">
+          <p class="error-code">ERROR 404</p>
+          <p class="error-message">Página no encontrada</p>
+          <p class="error-description">El recurso solicitado no existe en este servidor.</p>
+          <div class="terminal-path">
+            <span class="prompt">$</span>
+            <span>carlos@portfolio:~$ page not found</span>
+          </div>
+        </div>
+      </div>
+      
+      <a href="/" class="back-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span>Volver al inicio</span>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .not-found {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    background: 
+      radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+      var(--bg-primary);
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  .terminal {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 500px;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .terminal-header {
+    background: var(--bg-tertiary);
+    padding: 12px 16px;
+    display: flex;
+    gap: 8px;
+  }
+  
+  .terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  
+  .error { background: #ff5f57; }
+  .warning { background: #ffbd2e; }
+  .success { background: #28ca41; }
+  
+  .terminal-body {
+    padding: var(--space-lg);
+    font-family: var(--font-mono);
+  }
+  
+  .error-code {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--accent-primary);
+    margin-bottom: var(--space-sm);
+    animation: glitch 2s infinite;
+  }
+  
+  @keyframes glitch {
+    0%, 90%, 100% { transform: translate(0); }
+    92% { transform: translate(-2px, 2px); }
+    94% { transform: translate(2px, -2px); }
+    96% { transform: translate(-2px, -2px); }
+    98% { transform: translate(2px, 2px); }
+  }
+  
+  .error-message {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+  }
+  
+  .error-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-md);
+  }
+  
+  .terminal-path {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--accent-secondary);
+  }
+  
+  .prompt {
+    color: var(--accent-primary);
+  }
+  
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: 0.875rem 1.75rem;
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .back-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3);
+  }
+</style>
