@@ -29,7 +29,7 @@ export default function ParticleField() {
         this.vx = (Math.random() - 0.5) * 0.5;
         this.vy = (Math.random() - 0.5) * 0.5;
         this.size = Math.random() * 2 + 1;
-        this.color = Math.random() > 0.5 ? '#00ff88' : '#6366f1';
+        this.color = Math.random() > 0.5 ? '#a855f7' : '#7c3aed';
       }
 
       update() {
@@ -80,7 +80,7 @@ export default function ParticleField() {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(0, 255, 136, ${opacity * 0.2})`;
+            ctx.strokeStyle = `rgba(168, 85, 247, ${opacity * 0.2})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }

@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap');
 
 :root {
-  --bg-primary: #0a0a0b;
-  --bg-secondary: #111113;
-  --bg-tertiary: #1a1a1d;
-  --text-primary: #e8e8e8;
-  --text-secondary: #8a8a8d;
-  --accent-primary: #00ff88;
-  --accent-secondary: #00d4aa;
-  --accent-tertiary: #6366f1;
-  --border: #2a2a2e;
+  --bg-primary: #0f0a1a;
+  --bg-secondary: #1a1028;
+  --bg-tertiary: #251535;
+  --text-primary: #e8e8f0;
+  --text-secondary: #9990a8;
+  --accent-primary: #a855f7;
+  --accent-secondary: #c084fc;
+  --accent-tertiary: #7c3aed;
+  --border: #3d2a5c;
   
   --font-display: 'Syne', sans-serif;
   --font-body: 'IBM Plex Sans', sans-serif;
@@ -132,7 +132,7 @@ h1, h2, h3, h4 {
 
 .tag:hover {
   border-color: var(--accent-primary);
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
 }
 
 .fade-in {
@@ -154,8 +154,8 @@ h1, h2, h3, h4 {
 }
 
 @keyframes glow {
-  0%, 100% { text-shadow: 0 0 20px rgba(0, 255, 136, 0.3); }
-  50% { text-shadow: 0 0 40px rgba(0, 255, 136, 0.6); }
+  0%, 100% { text-shadow: 0 0 20px rgba(168, 85, 247, 0.3); }
+  50% { text-shadow: 0 0 40px rgba(168, 85, 247, 0.6); }
 }
 
 @keyframes scanline {

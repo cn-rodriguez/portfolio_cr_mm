@@ -187,14 +187,14 @@ const styles: Record<string, React.CSSProperties> = {
     marginBottom: '16px',
   },
   prompt: {
-    color: '#00ff88',
+    color: '#a855f7',
     marginRight: '8px',
   },
   welcomeText: {
     color: '#e8e8e8',
   },
   cursor: {
-    color: '#00ff88',
+    color: '#a855f7',
     animation: 'blink 1s step-end infinite',
     marginLeft: '2px',
   },
